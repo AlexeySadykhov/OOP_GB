@@ -57,4 +57,18 @@ public class StudentSteam implements Iterable<StudentGroup> {
             }
         };
     }
+    /**
+     * Переопределение toString
+     */
+    @Override
+    public String toString() {
+        StringBuilder strbld = new StringBuilder();
+        for (StudentGroup grp : this.groups) {
+            strbld.append(grp.toString());
+            strbld.append("---------------\n");
+        }
+        String result = String.format("Номер потока: %s\nКол-во групп: %s\n===============\n", 
+        this.steamNumber, this.groups.size());
+        return result + strbld.toString();
+    }
 }

@@ -12,6 +12,8 @@ import StudentDomen.User;
 public class App {
     /**
      * Метод печати студентов в группах
+     * Если уже переопределен toString в классе StudentSteam,
+     * то можно не использовать
      * @param steam
      */
     public static void printGroups(StudentSteam steam) {
@@ -56,9 +58,9 @@ public class App {
         // Создаем поток
         StudentSteam steam = new StudentSteam(groupsList, 3);
         printGroups(steam); // Выводим всех студентов по группам
-        System.out.println("Sorted");
         Collections.sort(steam.getGroups()); // Сортируем группы
-        printGroups(steam); // Выводим отсортированный поток
+        System.out.println("Sorted");
+        System.out.println(steam); // Выводим отсортированный поток
 
         // List<Student> listStud = new ArrayList<Student>();
         // listStud.add(s1);

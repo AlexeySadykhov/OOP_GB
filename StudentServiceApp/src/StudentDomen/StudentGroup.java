@@ -84,5 +84,29 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
         }
         else return 1;
     }
+    // @Override
+    // public int compareTo(StudentGroup o) {
+    //     if (this.groupNumber == o.groupNumber) {
+    //         return 0;
+    //     }
+    //     if (this.groupNumber < o.groupNumber) {
+    //         return -1;
+    //     }
+    //     else return 1;
+    // }
+    /**
+     * Переопределение toString
+     */
+    @Override
+    public String toString() {
+        StringBuilder strbld = new StringBuilder();
+        for (Student student : this.students) {
+            strbld.append(student.toString());
+            strbld.append("\n");
+        }
+        String result = String.format("Номер группы: %s\nКол-во студентов: %s\n", 
+        this.groupNumber, this.students.size());
+        return result + strbld.toString();
+    }
     
 }
